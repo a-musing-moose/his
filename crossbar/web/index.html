@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Welcome to Crossbar.io</h1>
+        <p>Press F12 to open JavaScript and read log output</p>
+        <script>AUTOBAHN_DEBUG = false;</script>
+        <script src="http://autobahn.s3.amazonaws.com/autobahnjs/latest/autobahn.min.jgz"></script>
+        <script>
+            console.log("Running AutobahnJS " + autobahn.version);
+            var connection = new autobahn.Connection({
+                url: "ws://" + document.location.host + "/ws",
+                realm: "realm1"
+            });
+            connection.onopen = function (session, details) {
+                console.log("Connected:", details);
+                document.his = session;
+            };
+            connection.onclose = function (reason, details) {
+                console.log("Connection lost: " + reason, details);
+            }
+            connection.open();
+      </script>
+   </body>
+</html>

@@ -1,0 +1,9 @@
+version: '3'
+services:
+    crossbar:
+        image: crossbario/crossbar
+        ports:
+            - "8080:8080" # HTTP and WS
+            - "1883:1883" # MQTT
+        volumes:
+            - ./crossbar:/node

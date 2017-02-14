@@ -1,0 +1,2 @@
+class ListItemNotFoundError(Exception):
+    pass

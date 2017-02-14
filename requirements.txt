@@ -1,0 +1,17 @@
+-r services/shopping/requirements.txt
+
+# For development
+ipython
+
+# Static Analysis
+mypy
+isort
+flake8
+
+# Unit/Integration Testing
+pytest
+pytest-coverage
+pytest-asyncio
+pytest-spec
+
+# Build tools
